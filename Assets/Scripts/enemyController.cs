@@ -7,13 +7,20 @@ public class enemyController : MonoBehaviour
     private float latestDirectionChangeTime;
     private readonly float directionChangeTime = 2f;
     private float characterVelocity = 1.2f;
+
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
+
     Vector2 center;
     bool goingToCenter = false;
+
+    private GameObject spawner;
+
+    public GameObject drop;
     
     void Start()
     {
+        spawner = GameObject.Find("enemySpawner");
         center = GameObject.Find("CenterOfScreen").transform.position;
         latestDirectionChangeTime = 0f;
         calcuateNewMovementVector();
@@ -30,6 +37,7 @@ public class enemyController : MonoBehaviour
                 latestDirectionChangeTime = Time.time;
                 calcuateNewMovementVector();
             }
+
             //move enemy: 
             transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
             transform.position.y + (movementPerSecond.y * Time.deltaTime));
@@ -37,8 +45,11 @@ public class enemyController : MonoBehaviour
         else
             IrAlOrigen();
 
+        //Si llega al centro, puede seguir moviendose
         if (transform.position.x == center.x && transform.position.y == center.y)
             goingToCenter = false;
+
+
         
     }
 
@@ -60,5 +71,19 @@ public class enemyController : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, center, Time.deltaTime * characterVelocity);
         goingToCenter = true;
     }
+
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+        spawner.gameObject.GetComponent<enemySpawnerScript>().enemiesLeft--;
+        print(spawner.gameObject.GetComponent<enemySpawnerScript>().enemiesLeft);
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(drop, transform.position, drop.transform.rotation);
+        Instantiate(drop, new Vector2(transform.position.x+0.21f, transform.position.y-0.21f), drop.transform.rotation);
+    }
+
 
 }
