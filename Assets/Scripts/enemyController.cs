@@ -48,9 +48,6 @@ public class enemyController : MonoBehaviour
         //Si llega al centro, puede seguir moviendose
         if (transform.position.x == center.x && transform.position.y == center.y)
             goingToCenter = false;
-
-
-        
     }
 
     void calcuateNewMovementVector()
@@ -74,15 +71,19 @@ public class enemyController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // cuando se toca a un enemigo, este es destruido y dropea dos canicas
+        // en el contador de enemigos se disminuye en uno, esta variable se utiliza
+        // para no spawnear enemigos infinitamente
         Destroy(gameObject);
+        Instantiate(drop, new Vector2(transform.position.x -0.21f, transform.position.y + 0.21f), drop.transform.rotation);
+        Instantiate(drop, new Vector2(transform.position.x + 0.21f, transform.position.y - 0.21f), drop.transform.rotation);
         spawner.gameObject.GetComponent<enemySpawnerScript>().enemiesLeft--;
         print(spawner.gameObject.GetComponent<enemySpawnerScript>().enemiesLeft);
     }
 
-    private void OnDestroy()
+    private void OnApplicationQuit()
     {
-        Instantiate(drop, transform.position, drop.transform.rotation);
-        Instantiate(drop, new Vector2(transform.position.x+0.21f, transform.position.y-0.21f), drop.transform.rotation);
+        GameManagerAndFuncs.DestroyGameObjectsWithTag("canica");
     }
 
 
