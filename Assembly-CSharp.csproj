@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\enemiesData.cs" />
     <Compile Include="Assets\Scripts\enemyController.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scripts\playerController.cs" />
     <Compile Include="Assets\Scripts\playerData.cs" />
     <Compile Include="Assets\Scripts\SaveSystem.cs" />
+    <Compile Include="Assets\Scripts\SoundData.cs" />
     <Compile Include="Assets\Scripts\swipeToTakeCanicas.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Dev/unity/TouhouEvo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

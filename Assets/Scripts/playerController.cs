@@ -21,7 +21,9 @@ public class playerController : MonoBehaviour
     {
         SaveSystem.LoadPlayer();
         spawner = GameObject.Find("enemySpawner");
+        LoadPlayer();
         UpdateScore();
+        
     }
 
     // Update is called once per frame
@@ -63,5 +65,11 @@ public class playerController : MonoBehaviour
         SaveSystem.SavePlayer(this);
     }
 
-    
+    public void LoadPlayer()
+    {
+        playerData data = SaveSystem.LoadPlayer();
+
+        score = data.score;
+                
+    }
 }

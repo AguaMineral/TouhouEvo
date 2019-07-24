@@ -79,6 +79,8 @@ public class swipeToTakeCanicas : MonoBehaviour
         {
             Destroy(other.gameObject);
 
+            FindObjectOfType<AudioManager>().Play("Canica");
+
             player.score += 10;
             player.UpdateScore();
         }
