@@ -46,31 +46,31 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9304}
+      Script: {instanceID: 9272}
     - Class: 114
-      Script: {instanceID: 9336}
+      Script: {instanceID: 9306}
     - Class: 114
-      Script: {instanceID: 9372}
+      Script: {instanceID: 9338}
     - Class: 114
       Script: {instanceID: 9374}
     - Class: 114
-      Script: {instanceID: 9380}
+      Script: {instanceID: 9376}
     - Class: 114
-      Script: {instanceID: 9386}
+      Script: {instanceID: 9382}
     - Class: 114
-      Script: {instanceID: 9394}
+      Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 9430}
+      Script: {instanceID: 9396}
     - Class: 114
       Script: {instanceID: 9432}
     - Class: 114
-      Script: {instanceID: 9678}
+      Script: {instanceID: 9434}
     - Class: 114
-      Script: {instanceID: 9706}
+      Script: {instanceID: 9680}
     - Class: 114
-      Script: {instanceID: 9900}
+      Script: {instanceID: 9708}
     - Class: 114
-      Script: {instanceID: 11436}
+      Script: {instanceID: 9902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -88,6 +88,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: f94b663ee7ea54aae7c130836a123b14
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
   - hash:
       serializedVersion: 2
       Hash: 984dcc0ba3707b7691fbdca8ff508d28
@@ -754,13 +760,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: f94b663ee7ea54aae7c130836a123b14
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AudioManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Descargas/Touhouhu2.apk
+  playerPath: D:/Descargas/Touhouhu6.apk

@@ -19,7 +19,6 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SaveSystem.LoadPlayer();
         spawner = GameObject.Find("enemySpawner");
         LoadPlayer();
         UpdateScore();

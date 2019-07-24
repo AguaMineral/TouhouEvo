@@ -7,7 +7,7 @@ public static class SaveSystem //Una clase estática no puede instanciarse
     public static void SavePlayer(playerController player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player.aqu";
+        string path = Path.Combine(Application.persistentDataPath + "/player.dat");
         FileStream stream = new FileStream(path, FileMode.Create);
 
         playerData data = new playerData(player);
@@ -18,7 +18,8 @@ public static class SaveSystem //Una clase estática no puede instanciarse
 
     public static playerData LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/player.aqu";
+        string path = Path.Combine(Application.persistentDataPath + "/player.dat");
+
 
         if (File.Exists(path))
         {
