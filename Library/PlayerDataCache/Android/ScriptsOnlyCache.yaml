@@ -2,7 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AudioManager
-    - ChangeScene
+    - UIController
     - enemyController
     - enemySpawnerScript
     - playerController
@@ -66,11 +66,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9434}
     - Class: 114
-      Script: {instanceID: 9680}
-    - Class: 114
       Script: {instanceID: 9708}
     - Class: 114
       Script: {instanceID: 9902}
+    - Class: 114
+      Script: {instanceID: 13314}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -760,7 +760,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIController
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Descargas/Touhouhu6.apk
+  playerPath: D:/Descargas/Touhouhu9.apk

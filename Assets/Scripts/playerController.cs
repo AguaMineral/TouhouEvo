@@ -39,8 +39,6 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //score++;
-            //
         }
             
     }
@@ -55,20 +53,22 @@ public class playerController : MonoBehaviour
 
     public void UpdateScore()
     {
-        
         scoreText.text = score.ToString();
-    }
 
-    private void OnApplicationQuit()
-    {
-        SaveSystem.SavePlayer(this);
+        //Save
+        PlayerPrefs.SetInt("score", score);
+        PlayerPrefs.Save();
     }
 
     public void LoadPlayer()
     {
-        playerData data = SaveSystem.LoadPlayer();
+        //Load
+        score = PlayerPrefs.GetInt("score");      
+    }
 
-        score = data.score;
-                
+    public void resetPlayer()
+    {
+        //All needed variables to reset
+        score = 0;
     }
 }
